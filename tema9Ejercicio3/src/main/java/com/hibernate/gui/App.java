@@ -196,7 +196,13 @@ public class App {
 				String capitulosTexto=textFieldCapitulos.getText();
 				int capitulos=Integer.parseInt(capitulosTexto);
 				
-				//Acabar la opción de actualizar
+				serie=serieDAO.selectSerieById(id);
+				
+				serie.setNombre(nombre);
+				serie.setTemporada(temporadas);
+				serie.setCapitulo(capitulos);
+				
+				serieDAO.updateSerie(serie);
 				
 				textFieldNombre.setText("");
 				textFieldTemporadas.setText("");
